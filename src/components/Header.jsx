@@ -2,11 +2,20 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoSearchOutline} from 'react-icons/io5'
 import {FaCircleUser} from 'react-icons/fa6'
 import logo from '../assets/images/youTubeLogo.png'
+
+import {toggleSideBar} from '../Utils/appSlice'
+import {useDispatch} from 'react-redux'
+
 const Header = () => {
+  const dispatch = useDispatch()
   return (
     <header className="grid grid-flow-col shadow-lg p-5 items-center">
       <section className="col-span-1 flex gap-8">
-        <button>
+        <button
+          onClick={() => {
+            dispatch(toggleSideBar())
+          }}
+        >
           <GiHamburgerMenu className="text-2xl" />
         </button>
         <img className="w-[120px]" src={logo} alt="youtube logo" />
