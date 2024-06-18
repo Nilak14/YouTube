@@ -6,7 +6,7 @@ import store from './Utils/store'
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
+      <div className="font-roboto">
         <Header />
         <Body />
       </div>

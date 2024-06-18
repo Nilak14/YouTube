@@ -1,14 +1,15 @@
-import {useSelector} from 'react-redux'
 import MainContainer from './MainContainer'
 import Sidebar from './Sidebar'
-import {combineSlices} from '@reduxjs/toolkit'
-
+import {useSelector} from 'react-redux'
 const Body = () => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
-  console.log(sideBarState)
   return (
-    <div className="flex gap-7">
-      {sideBarState && <Sidebar />}
+    <div
+      className={`grid ${
+        sideBarState ? ' grid-cols-[40px_1fr]' : ' grid-cols-[120px_1fr]'
+      } gap-10`}
+    >
+      <Sidebar />
 
       <MainContainer />
     </div>

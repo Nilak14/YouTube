@@ -9,7 +9,7 @@ import {useDispatch} from 'react-redux'
 const Header = () => {
   const dispatch = useDispatch()
   return (
-    <header className="grid grid-flow-col shadow-lg p-5 items-center">
+    <header className=" sticky top-0  bg-white grid grid-flow-col shadow-lg p-5 items-center">
       <section className="col-span-1 flex gap-8">
         <button
           onClick={() => {
