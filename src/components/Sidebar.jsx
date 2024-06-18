@@ -11,6 +11,7 @@ import {BiSolidUserAccount} from 'react-icons/bi'
 import {GoVideo} from 'react-icons/go'
 import {FaFireAlt, FaTrophy} from 'react-icons/fa'
 import {RiFeedbackLine} from 'react-icons/ri'
+import {Link} from 'react-router-dom'
 
 const Sidebar = () => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
@@ -20,9 +21,11 @@ const Sidebar = () => {
       <article className=" bg-white h-[89vh]  fixed  overflow-auto side-scroll-bar hover:scroll-bar-hover ">
         <section className=" ml-2 p-3 border-b-2 border-black">
           <ul>
-            <li className=" flex items-center gap-2 p-2 hover:bg-slate-300 rounded-lg font-bold text-md">
-              <IoMdHome className="text-2xl" />
-              Home
+            <li className=" p-2 hover:bg-slate-300 rounded-lg font-bold text-md">
+              <Link className="flex items-center gap-2" to={'/'}>
+                <IoMdHome className="text-2xl" />
+                Home
+              </Link>
             </li>
             <li className="flex items-center gap-2 p-2 hover:bg-slate-300 rounded-lg font-bold text-md">
               <SiYoutubeshorts className="text-2xl" />
@@ -128,9 +131,11 @@ const Sidebar = () => {
   ) : (
     <aside className="mt-4">
       <section className="w-[80px]  fixed flex flex-col justify-center items-center gap-10">
-        <div className="flex items-center flex-col gap-2">
-          <IoMdHome className="text-3xl" />
-          Home
+        <div>
+          <Link className="flex flex-col items-center gap-2" to={'/'}>
+            <IoMdHome className="text-3xl" />
+            Home
+          </Link>
         </div>
         <div className="flex items-center flex-col gap-2">
           <SiYoutubeshorts className="text-3xl" />

@@ -2,9 +2,9 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoSearchOutline} from 'react-icons/io5'
 import {FaCircleUser} from 'react-icons/fa6'
 import logo from '../assets/images/youTubeLogo.png'
-
 import {toggleSideBar} from '../Utils/appSlice'
 import {useDispatch} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -18,6 +18,7 @@ const Header = () => {
         >
           <GiHamburgerMenu className="text-2xl" />
         </button>
+
         <img className="w-[120px]" src={logo} alt="youtube logo" />
       </section>
       <form className="col-span-10 flex justify-center items-center">

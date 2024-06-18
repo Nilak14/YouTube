@@ -21,7 +21,7 @@ const VideoCard = ({data}) => {
         <FaCircleUser className="text-xl" />
         {channelTitle}
       </p>
-      <p className=" text-gray-500">
+      <p className=" text-gray-500 text-sm">
         {formatViews(viewCount)} views, {moment(publishedAt).fromNow()}
       </p>
     </article>

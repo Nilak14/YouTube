@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {YOUTUBE_API} from '../Utils/constant'
 import VideoCard from './VideoCard'
 import ShimmerCard from './ShimmerCard'
+import {Link} from 'react-router-dom'
 
 const VideoContainer = () => {
   const [youtubeData, setYoutubeData] = useState([])
@@ -34,7 +35,12 @@ const VideoContainer = () => {
   return (
     <section className="flex gap-4 flex-wrap  mt-5 pb-3 ml-4">
       {youtubeData.map((videoData) => {
-        return <VideoCard data={videoData} />
+        console.log(videoData)
+        return (
+          <Link key={videoData.id} to={`/watch/${videoData.id}`}>
+            <VideoCard data={videoData} />
+          </Link>
+        )
       })}
     </section>
   )
