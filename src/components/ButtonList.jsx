@@ -16,7 +16,7 @@ const ButtonList = () => {
     'Clash of Clans',
   ]
   return (
-    <section className="mt-4 px-4 flex gap-3 overflow-auto ">
+    <section className="mt-4 px-4 flex gap-3 overflow-auto scrollbar-thin side-scroll-bar hover:scroll-bar-hover ">
       {buttonList.map((name, index) => (
         <Button key={index} name={name} />
       ))}
