@@ -16,27 +16,6 @@ const Sidebar = () => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
 
   return sideBarState ? (
-    <aside className="mt-4">
-      <section className="w-[80px]  fixed flex flex-col justify-center items-center gap-10">
-        <div className="flex items-center flex-col gap-2">
-          <IoMdHome className="text-3xl" />
-          Home
-        </div>
-        <div className="flex items-center flex-col gap-2">
-          <SiYoutubeshorts className="text-3xl" />
-          Shorts
-        </div>
-        <div className="flex items-center flex-col gap-2">
-          <SiYoutubegaming className="text-3xl" />
-          Gaming
-        </div>
-        <div className="flex items-center flex-col gap-2">
-          <FaFireAlt className="text-3xl" />
-          Trending
-        </div>
-      </section>
-    </aside>
-  ) : (
     <aside className="">
       <article className=" bg-white h-[89vh]  fixed  overflow-auto side-scroll-bar hover:scroll-bar-hover ">
         <section className=" ml-2 p-3 border-b-2 border-black">
@@ -145,6 +124,27 @@ const Sidebar = () => {
           </ul>
         </section>
       </article>
+    </aside>
+  ) : (
+    <aside className="mt-4">
+      <section className="w-[80px]  fixed flex flex-col justify-center items-center gap-10">
+        <div className="flex items-center flex-col gap-2">
+          <IoMdHome className="text-3xl" />
+          Home
+        </div>
+        <div className="flex items-center flex-col gap-2">
+          <SiYoutubeshorts className="text-3xl" />
+          Shorts
+        </div>
+        <div className="flex items-center flex-col gap-2">
+          <SiYoutubegaming className="text-3xl" />
+          Gaming
+        </div>
+        <div className="flex items-center flex-col gap-2">
+          <FaFireAlt className="text-3xl" />
+          Trending
+        </div>
+      </section>
     </aside>
   )
 }

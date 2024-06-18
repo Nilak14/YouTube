@@ -8,8 +8,14 @@ const VideoCard = ({data}) => {
   const {viewCount} = data.statistics
   const {channelTitle, title, publishedAt} = data.snippet
   return (
-    <article className={` ${sideBarState ? 'w-[320px]' : 'w-[300px]'} `}>
-      <img className="rounded-lg" src={url} alt={title} />
+    <article
+      className={`${
+        sideBarState
+          ? 'w-[300px] md:w-[400] lg:w-[300px]'
+          : 'w-[300px] md:[450px] lg:w-[320px]'
+      }  `}
+    >
+      <img className="rounded-lg w-full" src={url} alt={title} />
       <p className=" font-bold text-md tracking-wide line-clamp-2">{title}</p>
       <p className=" flex items-center gap-2 font-medium text-gray-500">
         <FaCircleUser className="text-xl" />

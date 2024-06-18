@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import {YOUTUBE_API} from '../Utils/constant'
 import VideoCard from './VideoCard'
+import ShimmerCard from './ShimmerCard'
 
 const VideoContainer = () => {
   const [youtubeData, setYoutubeData] = useState([])
@@ -21,11 +22,17 @@ const VideoContainer = () => {
     }
   }
   if (youtubeData.length === 0) {
-    return <h1 className="text-center font-bold text-2xl">Loading....</h1>
+    return (
+      <section className="flex flex-wrap justify-center gap-4 mt-5 pb-3 mx-4">
+        {Array.from({length: 10}).map((_, index) => (
+          <ShimmerCard key={index} />
+        ))}
+      </section>
+    )
   }
 
   return (
-    <section className="flex gap-4 flex-wrap mt-5 pb-3 ml-4">
+    <section className="flex gap-4 flex-wrap  mt-5 pb-3 ml-4">
       {youtubeData.map((videoData) => {
         return <VideoCard data={videoData} />
       })}

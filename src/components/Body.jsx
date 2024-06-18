@@ -6,7 +6,7 @@ const Body = () => {
   return (
     <div
       className={`grid ${
-        sideBarState ? ' grid-cols-[40px_1fr]' : ' grid-cols-[120px_1fr]'
+        sideBarState ? ' grid-cols-[120px_1fr]' : ' grid-cols-[40px_1fr]'
       } gap-10`}
     >
       <Sidebar />
