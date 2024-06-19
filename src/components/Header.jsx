@@ -18,8 +18,9 @@ const Header = () => {
         >
           <GiHamburgerMenu className="text-2xl" />
         </button>
-
-        <img className="w-[120px]" src={logo} alt="youtube logo" />
+        <Link to={'/'}>
+          <img className="w-[120px]" src={logo} alt="youtube logo" />
+        </Link>
       </section>
       <form className="col-span-10 flex justify-center items-center">
         <section className="borderNormal w-[50%] overflow-hidden rounded-full flex">

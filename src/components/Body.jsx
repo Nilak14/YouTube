@@ -1,5 +1,4 @@
 import {Outlet} from 'react-router-dom'
-import MainContainer from './MainContainer'
 import Sidebar from './Sidebar'
 import {useSelector} from 'react-redux'
 
@@ -13,7 +12,6 @@ const Body = () => {
     >
       <Sidebar />
       <Outlet />
-      {/* <MainContainer /> */}
     </div>
   )
 }
