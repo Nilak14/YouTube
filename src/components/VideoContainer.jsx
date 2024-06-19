@@ -1,27 +1,11 @@
-import {useEffect, useState} from 'react'
-import {YOUTUBE_API} from '../Utils/constant'
 import VideoCard from './VideoCard'
 import ShimmerCard from './ShimmerCard'
 import {Link} from 'react-router-dom'
+import useVIdeos from '../Utils/Hooks/useVIdeos'
 
 const VideoContainer = () => {
-  const [youtubeData, setYoutubeData] = useState([])
-  useEffect(() => {
-    getYoutubeData()
-  }, [])
-  const getYoutubeData = async () => {
-    try {
-      const response = await fetch(YOUTUBE_API)
-      if (!response.ok) {
-        console.log('ok error')
-        return
-      }
-      const data = await response.json()
-      setYoutubeData(data.items)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  const youtubeData = useVIdeos()
+
   if (youtubeData.length === 0) {
     return (
       <section className="flex flex-wrap justify-center gap-4 mt-5 pb-3 mx-4">
@@ -31,11 +15,9 @@ const VideoContainer = () => {
       </section>
     )
   }
-
   return (
     <section className="flex gap-4 flex-wrap  mt-5 pb-3 ml-4">
       {youtubeData.map((videoData) => {
-        console.log(videoData)
         return (
           <Link key={videoData.id} to={`/watch/${videoData.id}`}>
             <VideoCard data={videoData} />

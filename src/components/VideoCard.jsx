@@ -4,9 +4,18 @@ import moment from 'moment'
 import {useSelector} from 'react-redux'
 const VideoCard = ({data}) => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
-  const {url} = data.snippet.thumbnails.medium
-  const {viewCount} = data.statistics
-  const {channelTitle, title, publishedAt} = data.snippet
+  // const {url} = data.snippet.thumbnails.medium
+  // const {viewCount} = data.statistics
+  // const {channelTitle, title, publishedAt} = data.snippet
+  const {
+    statistics: {viewCount},
+    snippet: {channelTitle, title, publishedAt},
+    snippet: {
+      thumbnails: {
+        medium: {url},
+      },
+    },
+  } = data
   return (
     <article
       className={`${

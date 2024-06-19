@@ -1,24 +1,13 @@
+import useVideoCategory from '../Utils/Hooks/useVideoCategory'
 import Button from './Button'
 
 const ButtonList = () => {
-  const buttonList = [
-    'All',
-    'Gaming',
-    'Javascript',
-    'Live',
-    'Clash Royale',
-    'Strategies',
-    'Music',
-    'AI',
-    'Cricket',
-    'Football',
-    'World Cup',
-    'Clash of Clans',
-  ]
+  const categoryList = useVideoCategory()
+
   return (
     <section className="mt-4 px-4 flex gap-3 overflow-auto scrollbar-thin side-scroll-bar hover:scroll-bar-hover ">
-      {buttonList.map((name, index) => (
-        <Button key={index} name={name} />
+      {categoryList.map((category, index) => (
+        <Button key={index} catData={category} />
       ))}
     </section>
   )
