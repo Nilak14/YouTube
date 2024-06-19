@@ -1,10 +1,11 @@
 import {GiHamburgerMenu} from 'react-icons/gi'
-import {IoSearchOutline} from 'react-icons/io5'
+
 import {FaCircleUser} from 'react-icons/fa6'
 import logo from '../assets/images/youTubeLogo.png'
 import {toggleSideBar} from '../Utils/appSlice'
 import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
+import SearchInput from './SearchInput'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -22,19 +23,7 @@ const Header = () => {
           <img className="w-[120px]" src={logo} alt="youtube logo" />
         </Link>
       </section>
-      <form className="col-span-10 flex justify-center items-center">
-        <section className="borderNormal w-[50%] overflow-hidden rounded-full flex">
-          <input
-            placeholder="Search"
-            className="w-full px-3 py-2 border-none outline-none font-semibold tracking-wider placeholder:font-normal"
-            type="text"
-          />
-          <button className="bg-black text-white px-3 py-2" type="submit">
-            <IoSearchOutline className="text-2xl" />
-          </button>
-        </section>
-      </form>
-
+      <SearchInput />
       <section className="col-span-1">
         <button>
           <FaCircleUser className="text-4xl" />

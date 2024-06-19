@@ -11,7 +11,7 @@ import {BiSolidUserAccount} from 'react-icons/bi'
 import {GoVideo} from 'react-icons/go'
 import {FaFireAlt, FaTrophy} from 'react-icons/fa'
 import {RiFeedbackLine} from 'react-icons/ri'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
@@ -21,11 +21,18 @@ const Sidebar = () => {
       <article className=" bg-white h-[89vh]  fixed  overflow-auto side-scroll-bar hover:scroll-bar-hover ">
         <section className=" ml-2 p-3 border-b-2 border-black">
           <ul>
-            <li className=" p-2 hover:bg-slate-300 rounded-lg font-bold text-md">
-              <Link className="flex items-center gap-2" to={'/'}>
+            <li className=" ">
+              <NavLink
+                className={({isActive}) =>
+                  `flex p-2 hover:bg-slate-300 rounded-lg font-bold text-md items-center gap-2 ${
+                    isActive && 'bg-slate-300'
+                  }`
+                }
+                to={'/'}
+              >
                 <IoMdHome className="text-2xl" />
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="flex items-center gap-2 p-2 hover:bg-slate-300 rounded-lg font-bold text-md">
               <SiYoutubeshorts className="text-2xl" />
