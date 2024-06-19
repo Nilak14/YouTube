@@ -2,6 +2,8 @@ import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import MainContainer from './components/MainContainer'
 import Watch from './components/Watch'
 import AppLayout from './AppLayout'
+import CatVideo from './components/CatVideo'
+import VideoContainer from './components/VideoContainer'
 
 const appRouter = createBrowserRouter([
   {
@@ -11,7 +13,18 @@ const appRouter = createBrowserRouter([
       {
         path: '/',
         element: <MainContainer />,
+        children: [
+          {
+            path: '/',
+            element: <VideoContainer />,
+          },
+          {
+            path: '/:catId',
+            element: <CatVideo />,
+          },
+        ],
       },
+
       {
         path: 'watch/:vidId',
         element: <Watch />,

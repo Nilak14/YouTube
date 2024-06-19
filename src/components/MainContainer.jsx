@@ -1,3 +1,4 @@
+import {Outlet} from 'react-router-dom'
 import ButtonList from './ButtonList'
 import VideoContainer from './VideoContainer'
 
@@ -5,7 +6,8 @@ const MainContainer = () => {
   return (
     <div className="overflow-hidden ml-8">
       <ButtonList />
-      <VideoContainer />
+      {/* <VideoContainer /> */}
+      <Outlet />
     </div>
   )
 }
