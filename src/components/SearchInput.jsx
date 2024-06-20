@@ -25,7 +25,7 @@ const SearchInput = () => {
             </button>
           </section>
           {showSuggestion && searchSuggestionResult.length !== 0 && (
-            <section className="borderNormal absolute top-full rounded-lg w-[91%] left-2  bg-white">
+            <section className="borderNormal absolute top-full rounded-lg w-[91%] left-2 h-[66vh]  bg-white overflow-auto">
               <ul className="py-2">
                 {searchSuggestionResult.map((searchResult, index) => {
                   return (
