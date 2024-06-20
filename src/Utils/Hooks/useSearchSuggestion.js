@@ -1,10 +1,23 @@
 import {useEffect, useState} from 'react'
 import {SEARCH_SUGGESTION_API} from '../constant'
+import {useDispatch, useSelector} from 'react-redux'
+import {searchCache} from '../SearchSlice'
 
 const useSearchSuggestion = (query) => {
   const [suggestedSearch, setSuggestedSearch] = useState([])
+
+  const cachedSearch = useSelector((store) => store.SearchSlice)
+  const dispatch = useDispatch()
+
   useEffect(() => {
-    const timeId = setTimeout(() => fetchSearchSuggestion(), 300)
+    const timeId = setTimeout(() => {
+      if (cachedSearch[query]) {
+        setSuggestedSearch(cachedSearch[query])
+      } else {
+        fetchSearchSuggestion()
+      }
+    }, 300)
+
     return () => {
       clearTimeout(timeId)
     }
@@ -19,6 +32,11 @@ const useSearchSuggestion = (query) => {
       }
       const data = await response.json()
       setSuggestedSearch(data[1])
+      dispatch(
+        searchCache({
+          [query]: data[1],
+        })
+      )
     } catch (error) {
       console.log(error)
     }
