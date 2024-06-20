@@ -26,7 +26,7 @@ const appRouter = createBrowserRouter([
       },
 
       {
-        path: 'watch/:vidId',
+        path: 'watch/:vidId/:channelId',
         element: <Watch />,
       },
     ],

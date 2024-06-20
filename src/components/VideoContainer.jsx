@@ -19,7 +19,10 @@ const VideoContainer = () => {
     <section className="flex gap-4 flex-wrap  mt-5 pb-3 ml-4">
       {youtubeData.map((videoData) => {
         return (
-          <Link key={videoData.id} to={`/watch/${videoData.id}`}>
+          <Link
+            key={videoData.id}
+            to={`/watch/${videoData.id}/${videoData.snippet.channelId}`}
+          >
             <VideoCard data={videoData} />
           </Link>
         )
