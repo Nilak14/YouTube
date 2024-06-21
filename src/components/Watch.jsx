@@ -9,6 +9,7 @@ import {FaShare} from 'react-icons/fa'
 import {BiSolidDownload} from 'react-icons/bi'
 import formatNumber from '../Utils/formatNumber'
 import moment from 'moment'
+import CommentContainer from './CommentContainer'
 
 const Watch = () => {
   const {vidId, channelId} = useParams()
@@ -101,7 +102,7 @@ const Watch = () => {
         </div>
         <div className="relative">
           <p className={`text-justify  ${showMore || 'line-clamp-3 '} `}>
-            {description}{' '}
+            {description}
           </p>
           <span
             onClick={() => setShowMore(!showMore)}
@@ -111,6 +112,7 @@ const Watch = () => {
           </span>
         </div>
       </section>
+      <CommentContainer videoId={vidId} />
     </main>
   )
 }
