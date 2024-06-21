@@ -72,19 +72,19 @@ const Watch = () => {
         </div>
         <div className="flex gap-3">
           <div className="flex items-center rounded-full shadow-sm overflow-hidden">
-            <button className="flex items-center px-2 py-2 gap-2 bg-gray-100 hover:bg-gray-200">
+            <button className="flex items-center px-2 py-2 gap-2 bg-gray-300 hover:bg-gray-200">
               <AiTwotoneLike className="text-2xl" />
               <p className="font-medium">{formatNumber(likeCount)}</p>
             </button>
-            <button className="border-l-2 border-gray-400 px-4 py-2 bg-gray-100 hover:bg-gray-200">
+            <button className="border-l-2 border-gray-400 px-4 py-2 bg-gray-300 hover:bg-gray-200">
               <AiTwotoneDislike className="text-2xl" />
             </button>
           </div>
-          <button className="flex items-center gap-2 px-2 py-1 shadow-sm rounded-full bg-gray-100 hover:bg-gray-200 font-medium">
+          <button className="flex items-center gap-2 px-2 py-1 shadow-sm rounded-full bg-gray-300 hover:bg-gray-200 font-medium">
             <FaShare className="text-xl" />
             Share
           </button>
-          <button className="flex items-center gap-2 shadow-sm px-2 py-1 rounded-full bg-gray-100 hover:bg-gray-200 font-medium">
+          <button className="flex items-center gap-2 shadow-sm px-2 py-1 rounded-full bg-gray-300 hover:bg-gray-200 font-medium">
             <BiSolidDownload className="text-xl" />
             Download
           </button>
