@@ -4,6 +4,7 @@ import Watch from './components/Watch'
 import AppLayout from './AppLayout'
 import CatVideo from './components/CatVideo'
 import VideoContainer from './components/VideoContainer'
+import SearchPage from './components/SearchPage'
 
 const appRouter = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const appRouter = createBrowserRouter([
           {
             path: '/:catId',
             element: <CatVideo />,
+          },
+          {
+            path: '/search/:searchQuery',
+            element: <SearchPage />,
           },
         ],
       },

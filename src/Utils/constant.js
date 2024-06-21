@@ -23,3 +23,7 @@ export const SINGLE_VIDEO_DATA_API = (videoId) =>
 
 export const COMMENT_API = (videoId, value) =>
   `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=${value}&videoId=${videoId}&key=${GOOGLE_API_KEY}`
+
+export const SEARCH_VIDEO_API = (searchParam) => `
+https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchParam}&key=${GOOGLE_API_KEY}
+`
