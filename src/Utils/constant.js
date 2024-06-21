@@ -20,3 +20,6 @@ export const CHANNEL_DATA_API = (channelId) =>
 
 export const SINGLE_VIDEO_DATA_API = (videoId) =>
   `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${GOOGLE_API_KEY}`
+
+export const COMMENT_API = (videoId, value) =>
+  `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=${value}&videoId=${videoId}&key=${GOOGLE_API_KEY}`
