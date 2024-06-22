@@ -40,7 +40,7 @@ const Comment = ({commentData}) => {
             {moment(publishedAt).fromNow()}
           </p>
         </div>
-        <div className=" overflow-hidden font-medium tracking-wide text-md">
+        <div className=" overflow-hidden  tracking-wide text-md">
           <p>{textOriginal}</p>
         </div>
         <div className="flex items-center ">

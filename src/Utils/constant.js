@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = 'AIzaSyAqdN_Y6N0hA6XVlM9WQCG6Tie6SsPLSEA'
+const GOOGLE_API_KEY = 'AIzaSyAWD8v4zHx5CU_kJyP7PcKn63T7p7UlFfk'
 const REGION_CODE = 'In'
 export const YOUTUBE_API =
   'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=' +
@@ -27,3 +27,5 @@ export const COMMENT_API = (videoId, value) =>
 export const SEARCH_VIDEO_API = (searchParam) => `
 https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchParam}&key=${GOOGLE_API_KEY}
 `
+export const PLAYlIST_API = (playlistId) =>
+  `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=${GOOGLE_API_KEY}`

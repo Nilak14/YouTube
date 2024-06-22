@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {IoSearchOutline} from 'react-icons/io5'
 import useSearchSuggestion from '../Utils/Hooks/useSearchSuggestion'
 import {Link} from 'react-router-dom'
