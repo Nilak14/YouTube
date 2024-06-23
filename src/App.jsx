@@ -20,7 +20,7 @@ const appRouter = createBrowserRouter([
             element: <VideoContainer />,
           },
           {
-            path: '/:catId',
+            path: '/cat/:catId',
             element: <CatVideo />,
           },
           {

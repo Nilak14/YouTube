@@ -51,8 +51,12 @@ const CatVideo = () => {
   return (
     <section className="flex gap-4 flex-wrap  mt-5 pb-3 ml-4">
       {categoryVideo.map((catVideoData) => {
+        console.log(catVideoData)
         return (
-          <Link key={catVideoData.id} to={`/watch/${catVideoData.id}`}>
+          <Link
+            key={catVideoData.id}
+            to={`/watch/${catVideoData.id}/${catVideoData.snippet.channelId}`}
+          >
             <VideoCard data={catVideoData} />
           </Link>
         )

@@ -13,7 +13,7 @@ const Button = ({catData}) => {
           'text-white bg-gray-950 hover:text-white hover:bg-gray-950'
         }  whitespace-nowrap bg-gray-200  hover:bg-gray-300  px-2 py-1  rounded-lg font-semibold tracking-wide`
       }
-      to={`/${id}`}
+      to={`cat/${id}`}
     >
       {title}
     </NavLink>

@@ -19,7 +19,7 @@ const SearchChannel = ({data}) => {
     statistics: {subscriberCount},
   } = channelData[0]
   return (
-    <section className="pb-5">
+    <section className="pb-5 borderNormal">
       <Link className="flex gap-5 mt-5 items-start">
         <div className=" flex items-center justify-center  min-w-[480px]">
           <img
