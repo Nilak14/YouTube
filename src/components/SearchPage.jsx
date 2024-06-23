@@ -1,5 +1,4 @@
-import {Link, useParams} from 'react-router-dom'
-import useSearch from '../Utils/Hooks/useSearch'
+import {useParams} from 'react-router-dom'
 import ShimmerCard from './ShimmerCard'
 import SearchCard from './SearchCard'
 import SearchChannel from './SearchChannel'
