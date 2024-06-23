@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = 'AIzaSyDxEEas5-R-gbeiGnO0nRUEf6A5Ow_T_44'
+const GOOGLE_API_KEY = 'AIzaSyDTZXqyRZcuHMyifdGCfd7I6dFTXVvwl4I'
 const REGION_CODE = 'In'
 export const YOUTUBE_API =
   'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=' +

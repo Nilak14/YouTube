@@ -1,5 +1,4 @@
 import useChannelData from '../Utils/Hooks/useChannelData'
-import {Link} from 'react-router-dom'
 import formatNumber from '../Utils/formatNumber'
 
 const SearchChannel = ({data}) => {
@@ -18,9 +17,10 @@ const SearchChannel = ({data}) => {
     },
     statistics: {subscriberCount},
   } = channelData[0]
+  console.log(channelData[0])
   return (
-    <section className="pb-5 borderNormal">
-      <Link className="flex gap-5 mt-5 items-start">
+    <section className="pb-5">
+      <div className="flex gap-5 mt-5 items-start">
         <div className=" flex items-center justify-center  min-w-[480px]">
           <img
             className="rounded-full  w-[136px] h-[136px]"
@@ -41,7 +41,7 @@ const SearchChannel = ({data}) => {
         <button className="bg-black text-white px-4 py-2 font-bold tracking-wide rounded-full hover:bg-gray-800 self-center mr-5">
           Subscribe
         </button>
-      </Link>
+      </div>
     </section>
   )
 }
