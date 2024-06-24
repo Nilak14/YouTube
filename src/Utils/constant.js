@@ -16,7 +16,7 @@ export const GET_VIDEO_BY_CATEGORY = (catId) => {
 }
 
 export const SEARCH_SUGGESTION_API =
-  'http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
+  'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
 export const CHANNEL_DATA_API = (channelId) =>
   `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${GOOGLE_API_KEY}`
