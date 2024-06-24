@@ -18,7 +18,12 @@ const SearchPlaylist = ({data}) => {
   return (
     <section>
       <Link className=" flex gap-5 mt-5">
-        <img className="rounded-xl" src={url} alt="video" />
+        <img
+          className="rounded-xl w-[240px] h-[130px] md:w-[340px] md:h-[190px]
+        object-cover lg:w-[500px] lg:h-[280px] aspect-video"
+          src={url}
+          alt="video"
+        />
         <article className="mt-2">
           <p className="font-bold text-lg">{title}</p>
           <div className="flex gap-2 text-gray-600 text-xs">

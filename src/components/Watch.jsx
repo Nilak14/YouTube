@@ -10,6 +10,7 @@ import {BiSolidDownload} from 'react-icons/bi'
 import formatNumber from '../Utils/formatNumber'
 import moment from 'moment'
 import CommentContainer from './CommentContainer'
+import SuggestedVideo from './SuggestedVideo'
 
 const Watch = () => {
   const {vidId, channelId} = useParams()
@@ -18,8 +19,7 @@ const Watch = () => {
 
   useEffect(() => {
     dispatch(closeSideBar())
-  }, [dispatch])
-
+  }, [])
   const channelData = useChannelData(channelId)
   const videoData = useSingleVideoDetails(vidId)
 
@@ -28,10 +28,9 @@ const Watch = () => {
   }
 
   const {
-    statistics: {viewCount, likeCount, commentCount},
-    snippet: {title, description, publishedAt, channelTitle},
+    statistics: {viewCount, likeCount},
+    snippet: {title, categoryId, description, publishedAt, channelTitle},
   } = videoData[0]
-
   const {
     statistics: {subscriberCount},
     snippet: {
@@ -42,77 +41,89 @@ const Watch = () => {
   } = channelData[0]
 
   return (
-    <main className="w-[70vw] mx-auto lg:mx-0 lg:w-[850px] pb-4">
-      <iframe
-        className="w-full aspect-video rounded-xl"
-        src={`https://www.youtube.com/embed/${vidId}?autoplay=1`}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
-      <h1 className="font-bold text-xl mt-3 tracking-wide">{title}</h1>
-      <section className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mt-2">
-        <div className="flex items-center gap-3">
-          <img
-            className="rounded-full w-[50px] aspect-square"
-            src={url}
-            alt="logo"
-          />
-          <div>
-            <p className="font-bold text-lg whitespace-nowrap">
-              {channelTitle}
-            </p>
-            <p className="text-sm text-gray-500">
-              {formatNumber(subscriberCount)} subscribers
-            </p>
-          </div>
-          <button className="bg-black text-white px-4 py-2 font-bold tracking-wide rounded-full ml-4 hover:bg-gray-800">
-            Subscribe
-          </button>
-        </div>
-        <div className="flex gap-3">
-          <div className="flex items-center rounded-full shadow-sm overflow-hidden">
-            <button className="flex items-center px-2 py-2 gap-2 bg-gray-300 hover:bg-gray-200">
-              <AiTwotoneLike className="text-2xl" />
-              <p className="font-medium">{formatNumber(likeCount)}</p>
-            </button>
-            <button className="border-l-2 border-gray-400 px-4 py-2 bg-gray-300 hover:bg-gray-200">
-              <AiTwotoneDislike className="text-2xl" />
-            </button>
-          </div>
-          <button className="flex items-center gap-2 px-2 py-1 shadow-sm rounded-full bg-gray-300 hover:bg-gray-200 font-medium">
-            <FaShare className="text-xl" />
-            Share
-          </button>
-          <button className="flex items-center gap-2 shadow-sm px-2 py-1 rounded-full bg-gray-300 hover:bg-gray-200 font-medium">
-            <BiSolidDownload className="text-xl" />
-            Download
-          </button>
-        </div>
-      </section>
-      <section
-        className={`bg-gray-200 px-5 py-2 rounded-lg mt-3  tracking-wide ${
-          showMore || 'max-h-[6.6rem]'
-        }  `}
-      >
-        <div className="flex gap-3 font-medium">
-          <p>{Number(viewCount).toLocaleString('en-IN')} Views</p>
-          <p>{moment(publishedAt).fromNow()}</p>
-        </div>
-        <div className="relative">
-          <p className={`text-justify  ${showMore || 'line-clamp-3 '} `}>
-            {description}
-          </p>
-          <span
-            onClick={() => setShowMore(!showMore)}
-            className="absolute bottom-0 right-0 bg-gray-200 cursor-pointer font-bold"
+    <main className=" w-full relative z-0">
+      <div className="w-full lg:flex lg:gap-5">
+        <section className="relative w-[70vw] mx-auto lg:mx-0 lg:w-7/12 pb-4">
+          <iframe
+            className="w-full aspect-video rounded-xl"
+            src={`https://www.youtube.com/embed/${vidId}?autoplay=1`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          <h1 className="font-bold text-xl mt-3 tracking-wide">{title}</h1>
+          <section className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mt-2">
+            <div className="flex items-center gap-3">
+              <img
+                className="rounded-full w-[50px] aspect-square"
+                src={url}
+                alt="logo"
+              />
+              <div>
+                <p className="font-bold text-lg whitespace-nowrap">
+                  {channelTitle}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {formatNumber(subscriberCount)} subscribers
+                </p>
+              </div>
+              <button className="bg-black text-white px-4 py-2 font-bold tracking-wide rounded-full ml-4 hover:bg-gray-800">
+                Subscribe
+              </button>
+            </div>
+            <div className="flex gap-3">
+              <div className="flex items-center rounded-full shadow-sm overflow-hidden">
+                <button className="flex items-center px-2 py-2 gap-2 bg-gray-300 hover:bg-gray-200">
+                  <AiTwotoneLike className="text-2xl" />
+                  <p className="font-medium">{formatNumber(likeCount)}</p>
+                </button>
+                <button className="border-l-2 border-gray-400 px-4 py-2 bg-gray-300 hover:bg-gray-200">
+                  <AiTwotoneDislike className="text-2xl" />
+                </button>
+              </div>
+              <button className="flex items-center gap-2 px-2 py-1 shadow-sm rounded-full bg-gray-300 hover:bg-gray-200 font-medium">
+                <FaShare className="text-xl" />
+                Share
+              </button>
+              <button className="flex items-center gap-2 shadow-sm px-2 py-1 rounded-full bg-gray-300 hover:bg-gray-200 font-medium">
+                <BiSolidDownload className="text-xl" />
+                Download
+              </button>
+            </div>
+          </section>
+          <section
+            className={`bg-gray-200 px-5 py-2 rounded-lg mt-3  tracking-wide ${
+              showMore || 'max-h-[6.6rem]'
+            }  `}
           >
-            {showMore ? 'Show less' : '...more'}
-          </span>
-        </div>
-      </section>
-      <CommentContainer videoId={vidId} />
+            <div className="flex gap-3 font-medium">
+              <p>{Number(viewCount).toLocaleString('en-IN')} Views</p>
+              <p>{moment(publishedAt).fromNow()}</p>
+            </div>
+            <div className="relative">
+              <p className={`text-justify  ${showMore || 'line-clamp-3 '} `}>
+                {description}
+              </p>
+              <span
+                onClick={() => setShowMore(!showMore)}
+                className="absolute bottom-0 right-0 bg-gray-200 cursor-pointer font-bold"
+              >
+                {showMore ? 'Show less' : '...more'}
+              </span>
+            </div>
+          </section>
+          <div className=" w-full   absolute hidden lg:block">
+            <CommentContainer videoId={vidId} />
+          </div>
+        </section>
+        <section className="w-[70vw] mx-auto lg:mx-0 lg:w-5/12 ">
+          <SuggestedVideo categoryId={categoryId} />
+          <div className=" w-[70vw] mx-auto lg:mx-0 lg:w-5/12 absolute lg:hidden">
+            <CommentContainer videoId={vidId} />
+          </div>
+        </section>
+      </div>
     </main>
   )
 }

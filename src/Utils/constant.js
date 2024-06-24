@@ -6,6 +6,9 @@ export const YOUTUBE_API =
   '&maxResults=50&key=' +
   GOOGLE_API_KEY
 
+export const POPULAR_VIDEOS_BY_CATEGORY = (categoryId) =>
+  ` https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=${REGION_CODE}&videoCategoryId=${categoryId}&key=${GOOGLE_API_KEY}
+`
 export const VIDEO_CATEGORY_API = `https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=${REGION_CODE}&key=${GOOGLE_API_KEY}`
 
 export const GET_VIDEO_BY_CATEGORY = (catId) => {

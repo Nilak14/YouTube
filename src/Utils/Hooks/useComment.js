@@ -5,7 +5,7 @@ const useComment = (videoId, value) => {
   const [commentData, setCommentData] = useState([])
   useEffect(() => {
     fetchCommentData()
-  }, [])
+  }, [videoId])
 
   const fetchCommentData = async () => {
     try {

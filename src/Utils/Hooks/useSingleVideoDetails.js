@@ -5,7 +5,7 @@ const useSingleVideoDetails = (videoId) => {
   const [videoData, setVideoData] = useState([])
   useEffect(() => {
     fetchSingleVideoData()
-  }, [])
+  }, [videoId])
   const fetchSingleVideoData = async () => {
     try {
       const response = await fetch(SINGLE_VIDEO_DATA_API(videoId))

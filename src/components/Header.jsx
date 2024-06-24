@@ -10,7 +10,7 @@ import SearchInput from './SearchInput'
 const Header = () => {
   const dispatch = useDispatch()
   return (
-    <header className=" sticky z-10 top-0  bg-white grid grid-flow-col shadow-lg p-5 items-center">
+    <header className=" sticky z-10 top-0 bottom-0  bg-white grid grid-flow-col shadow-lg p-5 items-center">
       <section className="col-span-1 flex gap-8">
         <button
           onClick={() => {

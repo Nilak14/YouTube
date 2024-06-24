@@ -27,7 +27,7 @@ const Comment = ({commentData}) => {
   const comments = commentData?.replies?.comments || []
 
   return (
-    <article className=" w-full p-2 flex items-start gap-4 mb-2">
+    <article className="  p-2 flex items-start gap-4 mb-2">
       <img
         className="rounded-full"
         src={authorProfileImageUrl}

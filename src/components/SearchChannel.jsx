@@ -19,9 +19,9 @@ const SearchChannel = ({data}) => {
   } = channelData[0]
   console.log(channelData[0])
   return (
-    <section className="pb-5">
-      <div className="flex gap-5 mt-5 items-start">
-        <div className=" flex items-center justify-center  min-w-[480px]">
+    <section className="pb-5 borderNormal">
+      <div className="flex gap-0 md:gap-5 mt-5 items-start">
+        <div className=" flex items-center justify-center min-w-[200px]  lg:min-w-[480px]">
           <img
             className="rounded-full  w-[136px] h-[136px]"
             src={url}
@@ -35,10 +35,10 @@ const SearchChannel = ({data}) => {
             <p>{formatNumber(subscriberCount)} subscribers</p>
           </div>
           <div className="text-xs text-gray-600 mt-4 leading-5">
-            <p className="mt-3 line-clamp-1">{description}</p>
+            <p className="mt-3 line-clamp-2 md:line-clamp-1">{description}</p>
           </div>
         </article>
-        <button className="bg-black text-white px-4 py-2 font-bold tracking-wide rounded-full hover:bg-gray-800 self-center mr-5">
+        <button className=" hidden md:block bg-black text-white px-4 py-2 font-bold tracking-wide rounded-full hover:bg-gray-800 self-center mr-5">
           Subscribe
         </button>
       </div>

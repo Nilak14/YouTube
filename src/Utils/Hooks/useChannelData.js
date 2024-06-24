@@ -5,7 +5,7 @@ const useChannelData = (channelId) => {
   const [channelData, setChannelData] = useState([])
   useEffect(() => {
     fetchChannelData()
-  }, [])
+  }, [channelId])
 
   const fetchChannelData = async () => {
     try {

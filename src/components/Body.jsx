@@ -6,8 +6,8 @@ const Body = () => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
   return (
     <div
-      className={`grid ${
-        sideBarState ? ' grid-cols-[120px_1fr]' : ' grid-cols-[40px_1fr]'
+      className={`lg:grid ${
+        sideBarState ? ' grid-cols-[80px_1fr]' : ' grid-cols-[40px_1fr]'
       } gap-20`}
     >
       <Sidebar />

@@ -17,8 +17,8 @@ const Sidebar = () => {
   const sideBarState = useSelector((store) => store.app.isSideBarOpen)
 
   return sideBarState ? (
-    <aside className="">
-      <article className=" bg-white h-[89vh]  fixed  overflow-auto side-scroll-bar hover:scroll-bar-hover ">
+    <aside className="  ">
+      <article className=" bg-white z-20 h-[89vh]  fixed  overflow-auto side-scroll-bar hover:scroll-bar-hover ">
         <section className=" ml-2 p-3 border-b-2 border-black">
           <ul>
             <li className=" ">
@@ -136,7 +136,7 @@ const Sidebar = () => {
       </article>
     </aside>
   ) : (
-    <aside className="mt-4">
+    <aside className="hidden lg:block mt-4">
       <section className="w-[80px]  fixed flex flex-col justify-center items-center gap-10">
         <div>
           <Link className="flex flex-col items-center gap-2" to={'/'}>

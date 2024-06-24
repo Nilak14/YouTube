@@ -35,10 +35,14 @@ const SearchCard = ({data}) => {
   const channelLogo = channelData[0]?.snippet?.thumbnails?.default?.url
   return (
     <section>
-      <Link className=" flex gap-5 mt-5" to={`/watch/${videoId}/${channelId}`}>
-        <img className="rounded-xl" src={url} alt="video" />
+      <Link className=" flex  gap-5 mt-5" to={`/watch/${videoId}/${channelId}`}>
+        <img
+          className="rounded-xl w-[240px] h-[130px] md:w-[340px] md:h-[190px] object-cover lg:w-[500px] lg:h-[280px] aspect-video"
+          src={url}
+          alt="video"
+        />
         <article className="mt-2">
-          <p className="font-bold text-lg">{title}</p>
+          <p className="font-bold text-lg line-clamp-2">{title}</p>
           <div className="flex gap-2 text-gray-600 text-xs">
             <p>{formatNumber(views)} Views</p>
             <p>{moment(publishedAt).fromNow()}</p>
@@ -52,7 +56,7 @@ const SearchCard = ({data}) => {
               />
               <p>{channelTitle}</p>
             </div>
-            <p className="mt-3">{description}</p>
+            <p className="line-clamp-1  mt-3">{description}</p>
           </div>
         </article>
       </Link>
