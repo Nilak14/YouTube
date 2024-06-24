@@ -22,11 +22,19 @@ const SearchInput = () => {
               className="w-full px-3 py-2 border-none outline-none font-semibold tracking-wider placeholder:font-normal"
               type="search"
             />
-            <Link to={`/search/${searchQuery}`}>
-              <button className="bg-black text-white px-3 py-2" type="submit">
-                <IoSearchOutline className="text-2xl" />
-              </button>
-            </Link>
+            {searchQuery.trim() === '' ? (
+              <Link>
+                <button className="bg-black text-white px-3 py-2" type="submit">
+                  <IoSearchOutline className="text-2xl" />
+                </button>
+              </Link>
+            ) : (
+              <Link to={`/search/${searchQuery}`}>
+                <button className="bg-black text-white px-3 py-2" type="submit">
+                  <IoSearchOutline className="text-2xl" />
+                </button>
+              </Link>
+            )}
           </section>
           {showSuggestion && searchSuggestionResult.length !== 0 && (
             <section className="borderNormal absolute top-full rounded-lg w-[91%] left-2 max-h-[66vh]  bg-white overflow-auto">

@@ -26,6 +26,13 @@ const SearchPage = () => {
       console.log(error)
     }
   }
+  if (searchQuery.trim() === '') {
+    return (
+      <h1 className="font-bold text-4xl absolute top-[50%] left-[50%] translate-x-[-50%]">
+        No videos found
+      </h1>
+    )
+  }
   if (searchData.length === 0) {
     return (
       <section className="flex flex-wrap justify-center gap-4 mt-5 pb-3 mx-4">
