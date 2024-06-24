@@ -5,7 +5,6 @@ import AppLayout from './AppLayout'
 import CatVideo from './components/CatVideo'
 import VideoContainer from './components/VideoContainer'
 import SearchPage from './components/SearchPage'
-import Channel from './components/Channel'
 
 const appRouter = createBrowserRouter([
   {

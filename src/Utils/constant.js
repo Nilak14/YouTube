@@ -1,4 +1,6 @@
-const GOOGLE_API_KEY = 'AIzaSyDTZXqyRZcuHMyifdGCfd7I6dFTXVvwl4I'
+// import.meta.env
+// const GOOGLE_API_KEY = 'AIzaSyDTZXqyRZcuHMyifdGCfd7I6dFTXVvwl4I'
+const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY
 const REGION_CODE = 'In'
 export const YOUTUBE_API =
   'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=' +
