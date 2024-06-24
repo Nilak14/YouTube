@@ -1,5 +1,3 @@
-// import.meta.env
-// const GOOGLE_API_KEY = 'AIzaSyDTZXqyRZcuHMyifdGCfd7I6dFTXVvwl4I'
 const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY
 const REGION_CODE = 'In'
 export const YOUTUBE_API =
